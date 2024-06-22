@@ -1,0 +1,97 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Navigation Menu Manager</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            body{
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            li{
+                list-style-type: none;
+            }
+
+            header{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0px 5%;
+                background-color: #2C3E50;
+                justify-content: space-between;
+                height: 50px;
+            }
+
+            .logo{
+                color: #FFF;
+                font-weight: 900;
+            }
+
+            nav ul{
+                display: flex;
+                flex-direction: row;
+            }
+
+            nav ul li{
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            nav ul li a{
+                color: #FFF;
+                display: block;
+                padding: 10px 10px;
+                border-radius: 1px;
+            }
+
+            nav ul li a:hover{
+                color: #DC7633;
+            }
+
+            .cta{
+                background-color: #DC7633;
+                color: #FFF;
+            }
+
+            .cta:hover{
+                background-color: #D35400;
+                color: #FFF;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <a href="#" class="logo">E-PARCEL UMT</a>
+            <nav>
+                <% String adminid = (String) session.getAttribute("adminid");
+                    String name = (String) session.getAttribute("name");
+                %>
+                
+                <ul>
+                    <li><a href="adminHome.jsp">Home</a></li>
+                    <li><a href="StaffParcel">Parcel</a></li><!--page parcel-->
+                    <li><a href="StudentController?action=listStudent">Student</a></li>
+                    <li><a href="StaffController?action=listStaff">Staff</a></li>
+                    <li><a href="AdminController?action=listAdmin">Manager</a></li>
+                    <li class="cta"><a href="AdminController?action=editAdmin&adminid=${adminid}">Profile <i class="fa fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+</html>

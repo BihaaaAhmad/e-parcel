@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="icon" type="img/png" href="img/delivery.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <title>Add Parcel</title>
+
+        <style>
+            html {
+                background-image: url("background1.jpg");
+                max-width: 100%;
+                max-height: 100%;
+                background-size: 100%;
+                background-position: 50% 80%;
+                margin: auto;
+                display: block;
+                font-family: 'Quicksand', sans-serif;
+            }
+            
+            img {
+                display: block;
+                height: 110px;
+                width: 110px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 4%;
+            }
+            
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            form{
+                background: whitesmoke;
+                width: 270px;
+                height: 590px;
+                margin : 25px 35%;
+                border-radius: 10px;
+                border-style: outset;
+                padding: 20px 5%;
+                line-height: 2;
+                justify-content: center;
+            }
+
+            label {
+                display: block;
+                width: 100px;
+                float: left;
+            }
+
+            select {
+                text-align: center;
+            }
+
+            input[type=text]{
+                display: inline-block;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin: auto;
+                font-size: 15px;
+                text-indent: 2px;
+                width: 60%;
+                padding: 8px 0;
+            }
+            
+            input[type=submit],input[type=reset]{
+                padding: 15px 0px ;
+                border: none ;
+                border-radius: 4px;
+                cursor: pointer ;
+                width: 35% ;
+                opacity: 0.9 ;
+                font-size: 15px;
+            }
+            
+            input[type=submit]{
+                background-color: green;
+                color: white ;
+                float: left;
+            }
+            
+            input[type=reset]{
+                background-color: red;
+                color: white ;
+                float: right;
+            }
+
+            input[type=submit]:hover {
+                background: #4CAF50;
+                opacity: 1 ;
+            }
+            
+            input[type=reset]:hover{
+                background: #F75D59;
+                opacity: 1 ;
+            }
+        </style>
+    </head>
+
+    <body>
+        <br><form action="SaveParcel" method="post">
+                
+            <img class="center" src="parcel.png">
+                
+            <center><h1>ADD PARCEL</h1></center>
+                
+            <label for="noTracking">No Tracking</label>
+            <input type="text" id="noTracking" name="noTracking" size="20" placeholder="Enter tracking number"><br><br>
+                
+            <label for="studid">Student ID</label>
+            <input type="text" id="studid" name="studid" size="15" placeholder="Enter student ID"><br><br>
+                
+            <label for="parcelWeight">Weight</label>
+            <input type="text" id="parcelWeight" name="parcelWeight" size="15" placeholder="Enter weight"><br><br>
+                
+            <label for="arrivedDate">Date Arrived</label>
+            <input type="date" id="arrivedDate" name="arrivedDate"><br><br>
+                
+            <label for="parcelStatus">Status</label>
+                <select name="parcelStatus" id="parcelStatus" style="width:115px">
+                    <option value="Received">Received</option>
+                    <option value="Not Received">Not received</option>
+                </select><br><br>
+                
+            <input id="btnSubmit" type="submit" value="Save" onclick="showAdd()">
+            <input id="btnReset" type="reset" value="Cancel">
+        </form>
+    </body>
+</html>
